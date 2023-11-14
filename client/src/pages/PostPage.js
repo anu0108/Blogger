@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { formatISO9075 } from "date-fns";
 import { UserContext } from "../UserContext";
-const BASE_URL = "https://blogger-a1rxqtb9o-anu0108.vercel.app/"
+const BASE_URL = "https://blogger-a1rxqtb9o-anu0108.vercel.app"
 
 
 export default function PostPage() {

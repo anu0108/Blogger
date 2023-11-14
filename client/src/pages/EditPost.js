@@ -4,7 +4,7 @@ import Editor from "../Editor";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
-const BASE_URL = "https://blogger-a1rxqtb9o-anu0108.vercel.app/"
+const BASE_URL = "https://blogger-a1rxqtb9o-anu0108.vercel.app"
 
 
 const modules = {

@@ -1,7 +1,6 @@
 import {formatISO9075} from "date-fns"
 import { Link } from "react-router-dom";
 
-const BASE_URL = "https://blogger-a1rxqtb9o-anu0108.vercel.app/"
 
 
 const Post = ({_id,title,summary,cover,content,createdAt,author}) => {
