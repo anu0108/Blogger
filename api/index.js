@@ -17,7 +17,7 @@ const app = express();
 
 app.use(cors({ credentials: true, 
   // origin: process.env.FRONTEND_LINK, 
-  origin: "https://blogger-n99b-c3jbmype5-anu0108.vercel.app", 
+  origin: "https://blogger-n99b.vercel.app", 
 }));
 app.use(express.json());
 app.use(cookieParser());
@@ -153,6 +153,6 @@ app.use("/", authRoute);
 //   res.json(postDoc);
 // });
 
-app.listen(4000, () => {
+app.listen(port, () => {
   console.log("Server is running on Port 4000");
 });
