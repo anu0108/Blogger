@@ -15,7 +15,10 @@ const authRoute = require("./Routes/Route");
 
 const app = express();
 
-app.use(cors({ credentials: true, origin: process.env.FRONTEND_LINK, }));
+app.use(cors({ credentials: true, 
+  // origin: process.env.FRONTEND_LINK, 
+  origin: "https://blogger-n99b-idb45hta4-anu0108.vercel.app", 
+}));
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
