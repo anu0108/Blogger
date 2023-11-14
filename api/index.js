@@ -17,7 +17,7 @@ const app = express();
 
 app.use(cors({ credentials: true, 
   // origin: process.env.FRONTEND_LINK, 
-  origin: "https://blogger-n99b-idb45hta4-anu0108.vercel.app", 
+  origin: "https://blogger-n99b-c3jbmype5-anu0108.vercel.app", 
 }));
 app.use(express.json());
 app.use(cookieParser());
