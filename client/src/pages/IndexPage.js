@@ -1,6 +1,6 @@
 import Post from "../Post";
 import { useEffect, useState } from "react";
-const BASE_URL = "https://blogger-kdvl84a0d-anu0108.vercel.app/"
+const BASE_URL = "https://blogger-kdvl84a0d-anu0108.vercel.app"
 
 
 export default function IndexPage(){
