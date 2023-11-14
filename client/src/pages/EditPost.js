@@ -4,6 +4,9 @@ import Editor from "../Editor";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
+const BASE_URL = "https://blogger-a1rxqtb9o-anu0108.vercel.app/"
+
+
 const modules = {
   toolbar: [
     [{ header: [1, 2, false] }],
@@ -28,7 +31,7 @@ export default function EditPost() {
   const [redirect,setRedirect] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:4000/post/'+id)
+    fetch(`${BASE_URL}/post/`+id)
       .then(response => {
         response.json().then(postInfo => {
           setTitle(postInfo.title);
@@ -48,7 +51,7 @@ export default function EditPost() {
     if (files?.[0]) {
       data.set('file', files?.[0]);
     }
-    const response = await fetch('http://localhost:4000/post', {
+    const response = await fetch(`${BASE_URL}/post`, {
       method: 'PUT',
       body: data,
       credentials: 'include',

@@ -1,4 +1,6 @@
 import { useState } from "react";
+const BASE_URL = "https://blogger-a1rxqtb9o-anu0108.vercel.app/"
+
 
 export default function RegisterPage() {
   const [username, setUsername] = useState("");
@@ -6,7 +8,7 @@ export default function RegisterPage() {
 
   async function register(event){
     event.preventDefault();
-     const response = await fetch("http://localhost:4000/register",{
+     const response = await fetch(`${BASE_URL}/register`,{
       method:"POST",
       body:JSON.stringify({username,password}),
       headers:{"Content-Type":"application/json"}

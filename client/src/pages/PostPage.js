@@ -2,6 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { formatISO9075 } from "date-fns";
 import { UserContext } from "../UserContext";
+const BASE_URL = "https://blogger-a1rxqtb9o-anu0108.vercel.app/"
+
 
 export default function PostPage() {
   const [postInfo, setPostInfo] = useState(null);
@@ -9,7 +11,7 @@ export default function PostPage() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:4000/post/${id}`)
+    fetch(`${BASE_URL}/post/${id}`)
       .then((response) => response.json())
       .then((postInfo) => {
         setPostInfo(postInfo);

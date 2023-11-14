@@ -4,6 +4,8 @@ import "react-quill/dist/quill.snow.css";
 import { Navigate } from "react-router-dom";
 import Editor from "../Editor";
 
+const BASE_URL = "https://blogger-a1rxqtb9o-anu0108.vercel.app/"
+
 const modules = {
   toolbar: [
     [{ header: [1, 2, false] }],
@@ -33,7 +35,7 @@ export default function CreatePost() {
     data.set("content",content);
     data.set("file",files[0]);
      event.preventDefault();
-     const response = await fetch("http://localhost:4000/post",{
+     const response = await fetch(`${BASE_URL}/post`,{
         method:"POST",
         body:data,
         credentials:"include",

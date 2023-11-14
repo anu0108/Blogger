@@ -1,10 +1,12 @@
 import Post from "../Post";
 import { useEffect, useState } from "react";
+const BASE_URL = "https://blogger-a1rxqtb9o-anu0108.vercel.app/"
+
 
 export default function IndexPage(){
     const [posts,setPosts] = useState([])
     useEffect(()=>{
-        const response = fetch("http://localhost:4000/post").then(response => {
+        const response = fetch(`${BASE_URL}/post`).then(response => {
             response.json().then(posts => {
                 setPosts(posts)
             });
