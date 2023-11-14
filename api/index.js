@@ -7,9 +7,8 @@ const Post = require("./models/Post");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
-const multer = require("multer");
-const uploadMiddleware = multer({ dest: "uploads/" });
-const fs = require("fs");
+
+
 const port = process.env.PORT || 4000;
 const authRoute = require("./Routes/Route");
 
