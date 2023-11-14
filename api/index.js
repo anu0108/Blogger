@@ -18,7 +18,7 @@ const app = express();
 app.use(cors({ credentials: true, 
   origin: process.env.FRONTEND_LINK, 
   // origin: "https://blogger-n99b.vercel.app", 
-}));
+})); 
 app.use(express.json());
 app.use(cookieParser());
 app.use("/uploads", express.static(__dirname + "/uploads"));
@@ -31,7 +31,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/", authRoute); 
-
+ 
 //route for the register page
 // app.post("/register", async (req, res) => {
 //   const { username, password } = req.body;
@@ -153,6 +153,6 @@ app.use("/", authRoute);
 //   res.json(postDoc);
 // });
 
-app.listen(port, () => {
+app.listen(4000, () => {
   console.log("Server is running on Port 4000");
 });
