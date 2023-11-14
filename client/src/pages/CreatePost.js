@@ -4,7 +4,7 @@ import "react-quill/dist/quill.snow.css";
 import { Navigate } from "react-router-dom";
 import Editor from "../Editor";
 
-const BASE_URL = "https://blogger-a1rxqtb9o-anu0108.vercel.app"
+const BASE_URL = "https://blogger-kdvl84a0d-anu0108.vercel.app"
 
 const modules = {
   toolbar: [
