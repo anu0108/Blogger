@@ -16,8 +16,8 @@ const authRoute = require("./Routes/Route");
 const app = express();
 
 app.use(cors({ credentials: true, 
-  origin: process.env.FRONTEND_LINK, 
-  // origin: "https://blogger-n99b.vercel.app", 
+  // origin: process.env.FRONTEND_LINK, 
+  origin: "https://blogger-n99b.vercel.app", 
 }));
 app.use(express.json());
 app.use(cookieParser());
