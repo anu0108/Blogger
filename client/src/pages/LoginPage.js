@@ -1,8 +1,6 @@
 import { useContext, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { UserContext } from "../UserContext";
-const BASE_URL = "https://blogger-kdvl84a0d-anu0108.vercel.app"
-
 
 export default function LoginPage() {
   const [username, setUsername] = useState("");
@@ -11,7 +9,7 @@ export default function LoginPage() {
   const {setUserInfo} = useContext(UserContext)
   async function login(event){
     event.preventDefault();
-    const response = await fetch(`${BASE_URL}/login"`,{
+    const response = await fetch(`${process.env.REACT_APP_BASE_URL}/login"`,{
       method:"POST",
       body:JSON.stringify({username,password}),
       headers: {"Content-Type":"application/json"},

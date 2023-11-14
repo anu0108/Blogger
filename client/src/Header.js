@@ -1,8 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import {Link} from "react-router-dom"
 import { UserContext } from "./UserContext";
-const BASE_URL = "https://blogger-kdvl84a0d-anu0108.vercel.app"
-
 
 export default function Header() {
   const [name,setName] = useState("");
@@ -10,7 +8,7 @@ export default function Header() {
   useEffect(()=>{
     const fetchData = async () =>{
       try {
-        const response = await fetch(`${BASE_URL}/profile`, {
+        const response = await fetch(`${process.env.REACT_APP_BASE_URL}/profile`, {
           credentials: "include",
         });
         
@@ -36,7 +34,7 @@ export default function Header() {
 
 
   function logout(){
-    fetch(`${BASE_URL}/logout`,{
+    fetch(`${process.env.REACT_APP_BASE_URL}/logout`,{
       credentials:"include",
       method:"POST",
     });
