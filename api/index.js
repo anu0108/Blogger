@@ -23,6 +23,10 @@ mongoose.connect(
   `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.lunza1v.mongodb.net/`
 );
 
+app.get("/", (req, res) => {
+  res.send("Hello, this is the root route!");
+});
+
 app.use("/", authRoute); 
 
 //route for the register page
