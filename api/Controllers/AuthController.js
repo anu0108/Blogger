@@ -47,5 +47,14 @@ module.exports.Login = async(req,res)=>{
 }
 
 module.exports.Logout = async(req,res)=>{
-    res.cookie("token", "").json("ok");
+    // res.cookie("token", "").json("ok");
+    res.cookie("token", "", {
+      maxAge:0, 
+      withCredentials: true,
+      httpOnly: false,
+      secure: true,
+      sameSite:'none',
+    });
+    res.status(200).send('Logged out successfully');
+    res.end();
 }

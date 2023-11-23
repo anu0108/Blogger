@@ -5,45 +5,56 @@ import { UserContext } from "./UserContext";
 export default function Header() {
   const [name,setName] = useState("");
   const {setUserInfo,userInfo} = useContext(UserContext)
-  useEffect(()=>{
-    const fetchData = async () =>{
+
+  useEffect(() => {
+    const fetchData = async () => {
       try {
         const response = await fetch(`${process.env.REACT_APP_BASE_URL}/profile`, {
           credentials: "include",
         });
-        
-        
-        if(response.status === 200){
+  
+        if (response.status === 200) {
           const userInfo = await response.json();
-        setUserInfo(userInfo);
-          setName(userInfo?.username)
+          setUserInfo(userInfo);
+          setName(userInfo?.username);
         }
       } catch (error) {
         console.error("Error fetching user profile:", error);
       }
-    }
-    fetchData()
-    // fetch("http://localhost:4000/profile",{
-    //   credentials:"include"
-    // }).then((response)=>{
-    //   response.json().then(userInfo =>{
-    //     setUserInfo(userInfo)
-    //   })
-    // })
-  },[setUserInfo])
+    };
+  
+    fetchData();
+  }, [setUserInfo, userInfo]);
 
 
-  function logout(){
-    fetch(`${process.env.REACT_APP_BASE_URL}/logout`,{
-      credentials:"include",
-      method:"POST",
-    });
-    setUserInfo(null);
+  // function logout(){
+  //   fetch(`${process.env.REACT_APP_BASE_URL}/logout`,{
+  //     credentials:"include",
+  //     method:"POST",
+  //   });
+  //   setUserInfo(null);
+  // }
+
+  function logout() {
+    fetch(`${process.env.REACT_APP_BASE_URL}/logout`, {
+      credentials: "include",
+      method: "POST",
+    })
+      .then((response) => {
+        if (response.ok) {
+          // Clear user info after successful logout
+          setUserInfo({}); // Set user info to an empty object or null
+        } else {
+          // Handle logout error if needed
+          console.error("Logout failed");
+        }
+      })
+      .catch((error) => {
+        console.error("Error during logout:", error);
+      });
   }
 
   const username = userInfo?.username
-
-
 
 
   return (
